@@ -16,3 +16,14 @@
     font-size: var(--fonte-tamanho-logo);
     margin-bottom: 1rem;
 }
+
+@media(min-width: 800px) {
+    .cadastro-cabecalho__logo {
+        width: 5.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .cadastro-cabecalho__titulo {
+        margin-bottom: 2rem;
+    }
+}

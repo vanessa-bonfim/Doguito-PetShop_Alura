@@ -23,3 +23,9 @@
 
     --sombra: 0 5px 10px #55a6ff38;
 }
+
+@media(min-width: 800px) {
+    :root {
+        --fonte-tamanho-logo: 56px;
+    }
+}
