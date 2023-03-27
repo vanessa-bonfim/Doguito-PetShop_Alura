@@ -9,6 +9,11 @@
       "nome": "vanessa",
       "email": "vanessa@alura.com",
       "id": 2
+    },
+    {
+      "nome": "vagner",
+      "email": "vagner@alura.com",
+      "id": 3
     }
   ]
 }
