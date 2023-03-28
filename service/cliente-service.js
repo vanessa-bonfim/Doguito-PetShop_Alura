@@ -3,9 +3,9 @@
  */
 const listaClientes = () => {
     return fetch(`http://localhost:3000/profile`)
-    .then( resposta => {
-        return resposta.json();
-    });
+        .then(resposta => {
+            return resposta.json();
+        });
     /* const promise = new Promise((resolve, reject) => {
         const http = new XMLHttpRequest();
         http.open('GET', 'http://localhost:3000/profile');
@@ -22,6 +22,25 @@ const listaClientes = () => {
     return promise; */
 };
 
+const criaCliente = (nome, email) => {
+    return fetch(`http://localhost:3000/profile`, {
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify({
+            nome: nome,
+            email: email
+        })
+    })
+    .then(resposta => {
+        return resposta.body
+    })
+}
+
+
 export const clienteService = {
-    listaClientes
+    listaClientes,
+    criaCliente,
+    
 }
