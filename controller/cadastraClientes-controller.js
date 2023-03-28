@@ -10,6 +10,6 @@ formulario.addEventListener('submit', (evento) => {
 
    clienteService.criaCliente(nome, email)
     .then(()=>{
-        window.location.href = '../html/cadastro_concluido.html'
+        window.location.href = '../html/cadastra_cliente_concluido.html'
     });
 });
