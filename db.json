@@ -34,6 +34,11 @@
       "nome": "teste1011",
       "email": "teste1011@alura.com",
       "id": 8
+    },
+    {
+      "nome": "teste123",
+      "email": "teste123@alura.com",
+      "id": 9
     }
   ]
 }

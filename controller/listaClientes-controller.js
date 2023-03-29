@@ -1,6 +1,6 @@
 import { clienteService } from "../service/cliente-service.js";
 
-const criaNovaLinha = (nome, email,id) => {
+const criaNovaLinha = (nome, email, id) => {
     const linhaNovoCliente = document.createElement('tr');
     const conteudo = `
                 <td class="td" data-td>${nome}</td>
@@ -19,22 +19,49 @@ const criaNovaLinha = (nome, email,id) => {
 
 const tabela = document.querySelector('[data-tabela]');
 
-tabela.addEventListener('click', (evento) => {
+tabela.addEventListener('click', async (evento) => {
     let ehBotaoDeletar = evento.target.className === 'botao-simples botao-simples--excluir';
     if (ehBotaoDeletar) {
-        const linhaCliente = evento.target.closest('[data-id]');
-        let id = linhaCliente.dataset.id;
-        clienteService.removeCliente(id)
-        .then(() => {
-            linhaCliente.remove();
-        });
+        try {
+            
+            const linhaCliente = evento.target.closest('[data-id]');
+            let id = linhaCliente.dataset.id;
+    
+            await clienteService.removeCliente(id)
+            linhaCliente.remove()
+    
+            /* clienteService.removeCliente(id)
+            .then(() => {
+                linhaCliente.remove();
+            }); */
+        }
+        catch(error){
+            console.log(error)
+            window.location.href = '../html/erro.html';
+        }
     }
 })
 
-clienteService.listaClientes()
+const render = async() => {
+    try {
+        const listaClientes = await clienteService.listaClientes()
+        listaClientes.forEach(elemento => {
+            tabela.appendChild(criaNovaLinha(elemento.nome,
+            elemento.email, elemento.id))
+        });
+        
+    } catch (error) {
+        console.log(error);
+        window.location.href = '../html/erro.html';
+    }
+};
+
+render();
+
+/* clienteService.listaClientes()
     .then(data => {
         data.forEach(elemento => {
             tabela.appendChild(criaNovaLinha(elemento.nome, elemento.email, elemento.id));
 
         });
-    });
+    }); */
