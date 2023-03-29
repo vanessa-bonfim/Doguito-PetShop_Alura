@@ -21,14 +21,19 @@
       "id": 4
     },
     {
-      "nome": "anderson",
-      "email": "anderson@alura.com",
-      "id": 5
+      "nome": "teste456",
+      "email": "teste456@alura.com",
+      "id": 6
     },
     {
-      "nome": "teste123",
-      "email": "teste123@alura.com",
-      "id": 6
+      "nome": "teste789",
+      "email": "teste789@alura.com",
+      "id": 7
+    },
+    {
+      "nome": "teste1011",
+      "email": "teste1011@alura.com",
+      "id": 8
     }
   ]
 }
